@@ -2,11 +2,9 @@ import './Article.scss';
 
 function Article({ item }) {
   const { title, channel, timestamp, views, likes, description, comments } = item;
-  // console.log('item', item)
 
   return (
     <div className="article">
-      {/* <video className="Article__video" src={video} controls></video> */}
       <div className="article__heading">
         <h2 className="article__title">{title}</h2>
         <div className="article__details">
