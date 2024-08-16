@@ -1,20 +1,21 @@
 import './Comments.scss';
-import jsonData from '../../assets/data/video-details.json';
 
-function Comments() {
+function Comments({ item }) {
+  const { comments } = item;
+
   return (
     <div>
-      {jsonData.map((item, index) => (
-        <div className="comments__items" key={index}>
+      {comments.map((comment) => (
+        <div className="comments__items" key={comment.id}>
           <div className="comments__avatar">
             <img src="" alt="" />
           </div>
           <div className="comments__details">
             <div className="comments__info">
-              <p className="comments__author">{item.comments[0].name}</p>
-              <p className="comments__date">{new Date(item.comments[0].timestamp).toLocaleDateString()}</p>
+              <p className="comments__author">{comment.name}</p>
+              <p className="comments__date">{new Date(comment.timestamp).toLocaleDateString()}</p>
             </div>
-            <p className="comments__response">{item.comments[0].comment}</p>
+            <p className="comments__response">{comment.comment}</p>
           </div>
         </div>
       ))}
