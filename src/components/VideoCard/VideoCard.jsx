@@ -1,6 +1,5 @@
 import './VideoCard.scss';
 function VideoCard({ video, handleSelect }) {
-    console.log('video', video);
   return (
     <li
       className="video__card-list"
