@@ -1,0 +1,56 @@
+@import './styles/partials/mixins';
+@import './styles/partials/variables';
+
+nav {
+  padding: 1rem;
+  @include desktop {
+    position: relative;
+    right: 5%;
+    width: 100%;
+    padding-left: 3%;
+    border-left: 0.05rem solid #afafaf;
+  }
+}
+
+.nav__title {
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  color: $silver;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.main {
+  @include desktop {
+    padding-left: 5%;
+    display: flex;
+  }
+}
+
+.app__content {
+  @include desktop {
+    max-width: 200rem;
+    position: relative;
+    right: 5%;
+    width: 100%;
+    padding-left: 3%;
+    border-left: 0.05rem solid #afafaf;
+  }
+}
+
+.app__content {
+  @include desktop {
+    position: relative;
+    right: 5%;
+    width: 100%;
+    padding-left: 3%;
+    border-left: 0.05rem solid #afafaf;
+  }
+}
+
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  overflow-x: hidden;
+}
