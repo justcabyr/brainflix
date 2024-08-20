@@ -81,10 +81,7 @@ input {
   }
 }
 
-a {
-  text-decoration: none;
-  display: block;
-}
+
 
 ul,
 li {
@@ -92,6 +89,20 @@ li {
   text-decoration: none;
 }
 
-li {
-  text-decoration: none;
+textarea {
+  font-style: inherit;
+  color: $secondary-black;
+  resize: none;
+  padding: 0.5rem 0 0 0.8rem;
+  border-radius: 0.25rem;
+  border-color: $silver;
+  background-color: $alabaster;
+  &::placeholder {
+    color: $secondary-black;
+  }
+  &:focus {
+    border-width: 0.1rem;
+    border-color: $blue !important;
+    outline: none;
+  }
 }
