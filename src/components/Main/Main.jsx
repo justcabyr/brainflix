@@ -13,24 +13,25 @@ function Main() {
   const list = jsonData.filter((p) => p.id !== selectedVideo.id);
 
   return (
-    <section>
-      <h1 className="app__title">Videos</h1>
-      <div className="app__content">
-        <Hero item={selectedVideo} />
+    <>
+      <Hero item={selectedVideo} />
+      <section className="main">
+        <div className="app__content">
+          <Article item={selectedVideo} />
+        </div>
+        <AddComment />
+        <Comments item={selectedVideo} />
 
-        <Article item={selectedVideo} />
-      </div>
-      <AddComment />
-      <Comments item={selectedVideo} />
-
-      <nav className="nav">
-        <ul className="nav__list">
-          {list.map((video) => (
-            <VideoCard key={video.id} video={video} handleSelect={setSelectedVideo} />
-          ))}
-        </ul>
-      </nav>
-    </section>
+        <nav className="nav">
+          <span className="nav__title">NEXT VIDEOS</span>
+          <ul className="nav__list">
+            {list.map((video) => (
+              <VideoCard key={video.id} video={video} handleSelect={setSelectedVideo} />
+            ))}
+          </ul>
+        </nav>
+      </section>
+    </>
   );
 }
 

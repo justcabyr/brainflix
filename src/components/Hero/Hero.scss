@@ -1,9 +1,18 @@
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
 .hero {
   width: 100%;
-  //   overflow: hidden;
+  background-color: $secondary-black;
   &__video {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    @include tablet {
+      width: 90%;
+    }
+    @include desktop {
+      width: 75%;
+    }
   }
 }

@@ -1,0 +1,169 @@
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+.article {
+  &__title {
+    text-align: left;
+    border-bottom: 0.05rem solid #afafaf;
+    padding-bottom: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    @include tablet {
+      margin-left: 0;
+      margin-right: 0;
+      border: none;
+    }
+    @include desktop {
+      border: none;
+      max-width: 86.1%;
+      margin-top: 0;
+      padding-top: 2.25rem;
+      margin-left: 6%;
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-left: 1rem;
+    gap: 2.6rem;
+    border-bottom: 0.05rem solid #afafaf;
+    @include tablet {
+      margin-left: 0;
+      margin-right: 0;
+      position: relative;
+      min-height: 3rem;
+    }
+    @include desktop {
+      max-width: 86.1%;
+      position: relative;
+      min-height: 3rem;
+      padding: 0;
+      margin-left: 6%;
+    }
+  }
+
+  &__author-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0;
+    gap: 1rem;
+    @include tablet {
+      gap: 1rem;
+      flex-direction: row;
+      position: absolute;
+      left: 1%;
+    }
+    @include desktop {
+      gap: 1rem;
+      flex-direction: row;
+      position: absolute;
+      left: 1%;
+    }
+  }
+
+  &__author {
+    color: $black;
+    font-weight: 600;
+    margin: 1rem 0;
+    @include tablet {
+      margin: 0;
+    }
+
+    &__date {
+      color: $silver;
+    }
+  }
+
+  &__views-wrapper {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      margin: 0;
+      position: absolute;
+      left: 57%;
+    }
+    @include desktop {
+      padding: 0;
+      left: 45%;
+    }
+  }
+
+  &__engagement {
+    // display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      margin: 0;
+      position: absolute;
+      left: 57%;
+    }
+    @include desktop {
+      padding: 0;
+      left: 45%;
+    }
+  }
+
+  &__views-wrapper {
+    display: flex;
+    gap: 1.25rem;
+    @include desktop {
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+  &__views-icon {
+    width: 1.8rem;
+  }
+  &__views {
+    color: $silver;
+  }
+
+  &__likes-wrapper {
+    display: flex;
+    gap: 1.25rem;
+    @include desktop {
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__likes-icon {
+    width: 1.5rem;
+  }
+
+  &__likes {
+    color: $silver;
+  }
+
+  &__content {
+    text-align: left;
+    color: $black;
+    @include tablet {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    @include desktop {
+      margin-top: 0;
+      padding: 0;
+      max-width: 86.1%;
+      margin-left: 6%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    @include desktop {
+      margin-top: 0;
+      padding-top: 2.4rem;
+    }
+  }
+  &__comments-count {
+    font-weight: 700;
+    color: $black;
+  }
+}
