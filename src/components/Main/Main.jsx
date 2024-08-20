@@ -2,6 +2,7 @@ import './Main.scss';
 import Comments from '../Comments/Comments';
 import VideoCard from '../VideoCard/VideoCard';
 import Article from '../Article/Article';
+import AddComment from '../AddComment/AddComment';
 import jsonData from '../../assets/data/video-details.json';
 import { useState } from 'react';
 import Hero from '../Hero/Hero';
@@ -19,7 +20,7 @@ function Main() {
 
         <Article item={selectedVideo} />
       </div>
-
+      <AddComment />
       <Comments item={selectedVideo} />
 
       <nav className="nav">
