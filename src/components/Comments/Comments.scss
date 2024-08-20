@@ -1,4 +1,4 @@
-@use '../../styles/partials/global.scss';
+@use '../../styles/partials/mixins';
 
 .comments {
   &__items {
@@ -37,11 +37,11 @@
     font-weight: 600;
   }
 
-  &__date{
-    color: #AFAFAF;
+  &__date {
+    color: #afafaf;
   }
 
-  &__response{
+  &__response {
     padding: 0.5rem 0;
     word-wrap: break-word;
     white-space: pre-wrap;
