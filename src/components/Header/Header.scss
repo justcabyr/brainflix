@@ -1,0 +1,96 @@
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1rem;
+  gap: 1.5rem;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  &__banner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+  }
+
+  &__search {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+    object-position: calc(50% + 0.4rem) center;
+    &--mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+    &--tablet {
+      display: none;
+      @include tablet {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      width: 40%;
+    }
+    @include desktop {
+      width: 25%;
+    }
+  }
+
+  &__button-icon {
+    position: relative;
+    right: 30%;
+    top: 5%;
+    @include tablet {
+      top: 5%;
+      right: 20%;
+    }
+  }
+
+  &__search-input {
+    flex: 1;
+    padding-left: 2.4rem;
+    width: 90%;
+    @include tablet {
+      padding-left: 2.4rem;
+      max-width: 60%;
+    }
+  }
+  &__search-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    @include tablet {
+      left: 42%;
+    }
+  }
+}
