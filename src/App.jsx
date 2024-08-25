@@ -1,18 +1,21 @@
-import { useState } from 'react';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './styles/global.scss'
+// import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './styles/global.scss';
 import './App.scss';
 import Main from './components/Main/Main';
-import Header from './components/Header/Header';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
-  const [json, setJson] = useState(0);
+  // const [json, setJson] = useState(0);
 
   return (
-    <>
-      <Header />
-      <Main />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/videos/:id" element={<Main />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 

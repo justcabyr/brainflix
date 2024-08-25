@@ -3,6 +3,8 @@ import './Article.scss';
 function Article({ item }) {
   const { title, channel, timestamp, views, likes, description, comments } = item;
 
+  console.log('item', item)
+
   const date = new Date(timestamp);
   const formattedDate = `${String(date.getMonth() + 1)}/${String(date.getDate())}/${date.getFullYear()}`;
 
@@ -29,7 +31,7 @@ function Article({ item }) {
       </div>
       <div className="article__body">
         <p className="article__description">{description}</p>
-        <p className="article__comments-count">{comments.length+ ' Comments'}</p>
+        <p className="article__comments-count">{comments?.length + ' Comments'}</p>
       </div>
     </div>
   );
