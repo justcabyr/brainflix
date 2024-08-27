@@ -3,24 +3,54 @@ import Comments from '../Comments/Comments';
 import VideoCard from '../VideoCard/VideoCard';
 import Article from '../Article/Article';
 import AddComment from '../AddComment/AddComment';
-import jsonData from '../../assets/data/video-details.json';
-import { useState } from 'react';
+import axios from 'axios';
+import { apiUrl } from '../../utils/config';
+import { useEffect, useState } from 'react';
 import Hero from '../Hero/Hero';
+import Header from '../Header/Header';
+import { useParams } from 'react-router-dom';
 
 function Main() {
-  const [selectedVideo, setSelectedVideo] = useState(jsonData[0]);
+  const { id } = useParams();
+  const [selectedVideo, setSelectedVideo] = useState({});
+  const [videoList, setVideoList] = useState([]);
 
-  const list = jsonData.filter((p) => p.id !== selectedVideo.id);
+  let currentVideoId, selectedVideoId;
+  if (videoList.length > 0) {
+    currentVideoId = videoList[0].id || null;
+  }
+  selectedVideoId = id ?? currentVideoId;
+
+  useEffect(() => {
+    const getVideoList = async () => {
+      const { data } = await axios.get(`${apiUrl}/videos?api_key=apiKey`);
+      setVideoList(data);
+    };
+    getVideoList();
+  }, []);
+
+  useEffect(() => {
+    const getVideo = async () => {
+      const { data } = await axios.get(`${apiUrl}/videos/${selectedVideoId}?api_key=apiKey`);
+      console.log('video', data);
+      setSelectedVideo(data);
+    };
+
+    getVideo();
+  }, [selectedVideoId]);
+
+  const list = videoList.filter((video) => video.id !== selectedVideoId);
 
   return (
     <>
+      <Header />
       <Hero item={selectedVideo} />
       <section className="main">
         <div className="app__content">
           <Article item={selectedVideo} />
-        </div>
         <AddComment />
         <Comments item={selectedVideo} />
+        </div>
 
         <nav className="nav">
           <span className="nav__title">NEXT VIDEOS</span>

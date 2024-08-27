@@ -5,7 +5,7 @@ function Comments({ item }) {
 
   return (
     <div>
-      {comments.map((comment) => (
+      {comments?.map((comment) => (
         <div className="comments__items" key={comment.id}>
           <div className="comments__avatar">
             <img src="" alt="" />
