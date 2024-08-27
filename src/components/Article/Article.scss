@@ -158,12 +158,16 @@
 
   &__description {
     @include desktop {
-      margin-top: 0;
+      margin-left: 2rem;
       padding-top: 2.4rem;
     }
   }
   &__comments-count {
     font-weight: 700;
     color: $black;
+     @include desktop {
+      margin-left: 2rem;
+      padding-top: 2.4rem;
+    }
   }
 }

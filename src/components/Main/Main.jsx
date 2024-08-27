@@ -48,9 +48,9 @@ function Main() {
       <section className="main">
         <div className="app__content">
           <Article item={selectedVideo} />
-        </div>
         <AddComment />
         <Comments item={selectedVideo} />
+        </div>
 
         <nav className="nav">
           <span className="nav__title">NEXT VIDEOS</span>
