@@ -1,9 +1,26 @@
+import { useNavigate } from 'react-router-dom';
 import './Header.scss';
 
 function Header() {
+
+   const navigate = useNavigate();
+
+   const handleUpload = () => {
+     navigate('/upload');
+   };
+
+    const handleHomepage = () => {
+      navigate('/');
+    };
+
   return (
     <header className="header">
-      <img src="../../src/assets/logo/brainFlix-logo.svg" alt="Brainflix logo" className="header__logo" />
+      <img
+        src="../../src/assets/logo/brainFlix-logo.svg"
+        alt="Brainflix logo"
+        className="header__logo"
+        onClick={handleHomepage}
+      />
       <div className="header__banner">
         <div className="header__search">
           <img src="../../src/assets/icons/search.svg" alt="search icon" className="header__search-icon" />
@@ -15,7 +32,7 @@ function Header() {
           className="header__avatar header__avatar--mobile"
         />
       </div>
-      <button className="header__button">
+      <button className="header__button" onClick={handleUpload}>
         <img src="../../src/assets/icons/upload.svg" alt="header__button-icon" /> UPLOAD
       </button>
       <img

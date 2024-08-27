@@ -24,7 +24,6 @@ function Main() {
   useEffect(() => {
     const getVideoList = async () => {
       const { data } = await axios.get(`${apiUrl}/videos?api_key=apiKey`);
-      // console.log('videoList', data);
       setVideoList(data);
     };
     getVideoList();
