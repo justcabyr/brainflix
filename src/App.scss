@@ -28,17 +28,7 @@ nav {
 }
 
 .app__content {
-  @include desktop {
-    max-width: 200rem;
-    position: relative;
-    right: 5%;
-    width: 100%;
-    padding-left: 3%;
-    border-left: 0.05rem solid #afafaf;
-  }
-}
-
-.app__content {
+  padding: 0 1rem;
   @include desktop {
     position: relative;
     right: 5%;
@@ -50,7 +40,5 @@ nav {
 
 #root {
   margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
   overflow-x: hidden;
 }

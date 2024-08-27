@@ -2,6 +2,7 @@
 @import '../../styles/partials/variables';
 
 .hero {
+  text-align: center;
   width: 100%;
   background-color: $secondary-black;
   &__video {
