@@ -1,5 +1,5 @@
 import './Main.scss';
-import Comments from '../Comments/Comments';
+import CommentCard from '../CommentCard/CommentCard';
 import VideoCard from '../VideoCard/VideoCard';
 import Article from '../Article/Article';
 import AddComment from '../AddComment/AddComment';
@@ -7,7 +7,6 @@ import axios from 'axios';
 import { apiUrl } from '../../utils/config';
 import { useEffect, useState } from 'react';
 import Hero from '../Hero/Hero';
-import Header from '../Header/Header';
 import { useParams } from 'react-router-dom';
 
 function Main() {
@@ -32,8 +31,8 @@ function Main() {
   useEffect(() => {
     const getVideo = async () => {
       const { data } = await axios.get(`${apiUrl}/videos/${selectedVideoId}?api_key=apiKey`);
-      console.log('video', data);
       setSelectedVideo(data);
+      document.title = data.title
     };
 
     getVideo();
@@ -43,13 +42,14 @@ function Main() {
 
   return (
     <>
-      <Header />
       <Hero item={selectedVideo} />
       <section className="main">
         <div className="app__content">
           <Article item={selectedVideo} />
-        <AddComment />
-        <Comments item={selectedVideo} />
+          <AddComment />
+          {selectedVideo.comments?.map((comment) => (
+            <CommentCard key={comment.id} comment={comment}/>
+          ))}
         </div>
 
         <nav className="nav">
