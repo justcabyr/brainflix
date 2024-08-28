@@ -3,8 +3,6 @@ import './Article.scss';
 function Article({ item }) {
   const { title, channel, timestamp, views, likes, description, comments } = item;
 
-  console.log('item', item)
-
   const date = new Date(timestamp);
   const formattedDate = `${String(date.getMonth() + 1)}/${String(date.getDate())}/${date.getFullYear()}`;
 
