@@ -1,5 +1,6 @@
 @import './styles/partials/mixins';
 @import './styles/partials/variables';
+@import './styles/partials/typography';
 
 nav {
   padding: 1rem;
@@ -41,4 +42,8 @@ nav {
 #root {
   margin: 0 auto;
   overflow-x: hidden;
+}
+
+body{
+  font-family: $font-family;
 }
