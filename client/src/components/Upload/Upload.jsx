@@ -16,7 +16,6 @@ function Upload() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert('Upload successful!');
-    console.log('Video uploaded with title:', title, 'and description:', description);
     navigate('/');
   };
   return (
